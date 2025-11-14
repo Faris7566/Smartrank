@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smartrank • Rekomendasi Jurusan dari Nilai Rapor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Smartrank • Rekomendasi Jurusan dari Nilai Rapor</h1>
+    <p class="subtitle">Masukkan nilai rapor Semester 1–5. Sistem akan menghitung skor klaster otomatis dan memberi rekomendasi jurusan paling sesuai.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>📘 Input Nilai Rapor</h2>
+      <div class="btn-group">
+        <button id="btnSave">Simpan</button>
+        <button id="btnLoad">Muat</button>
+        <button id="btnReset">Reset</button>
+        <button id="btnFill">Isi Contoh</button>
+        <button id="btnRun" class="primary">Hitung</button>
+      </div>
+
+      <div class="table-wrap" id="tableWrap">
+        <table id="tbl">
+          <thead>
+            <tr>
+              <th>Mata Pelajaran</th>
+              <th>Kategori</th>
+              <th>S1</th>
+              <th>S2</th>
+              <th>S3</th>
+              <th>S4</th>
+              <th>S5</th>
+              <th>Rata-rata</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <button id="btnAddRow" class="secondary">+ Tambah Mapel Kustom</button>
+    </section>
+
+    <section class="panel">
+      <h2>📊 Ringkasan Skor Klaster</h2>
+      <div id="kpiGrid" class="kpi-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>🎯 Rekomendasi Program Studi (Top 20)</h2>
+      <div id="recList" class="rec-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Catatan:</strong></p>
+    <ul>
+      <li>Kategori seperti <b>IPA, IPS, Bahasa, Teknologi, Seni, Kesehatan</b> ditentukan otomatis dari nama mapel dan tidak bisa diubah.</li>
+      <li>Kategori <b>Umum</b> mewakili pelajaran dasar semua jurusan (Agama, PPKn, Sejarah, PJOK, dll).</li>
+      <li>Nilai klaster dihitung dari rata-rata nilai tiap kategori, dengan batas minimal 40 agar tetap proporsional.</li>
+      <li>Gunakan fitur <b>Simpan</b> untuk menyimpan data di browser, dan <b>Muat</b> untuk memanggil ulang.</li>
+    </ul>
+    <p>© 2025 Smartrank by ChatGPT – dibuat untuk edukasi & latihan.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
